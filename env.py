@@ -1,0 +1,1 @@
+BASE_LINK = 'https://reqres.in/'
