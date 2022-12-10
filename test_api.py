@@ -2,7 +2,6 @@ from api_methods import APIMethods
 from secondary_defs import *
 import allure
 
-
 def test_get_list_users():
     with allure.step("Step 1. Create request"):
         response = APIMethods.get_list_users(1)
