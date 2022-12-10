@@ -23,14 +23,14 @@ class APIMethods():
     @staticmethod
     def create_new_user(request_body: str) -> str:
 
-        response = requests.post(f'{BASE_LINK}/api/users/', json = request_body)
+        response = requests.post(f'{BASE_LINK}/api/users/', data = request_body)
 
         return response
 
     @staticmethod
     def update_user(request_body: str, user_id: int) -> str:
 
-        response = requests.put(f'{BASE_LINK}/api/users/{user_id}', json = request_body)
+        response = requests.put(f'{BASE_LINK}/api/users/{user_id}', data = request_body)
 
         return response
 
@@ -44,13 +44,13 @@ class APIMethods():
     @staticmethod
     def register(request_body: str) -> str:
 
-        response = requests.post(f"{BASE_LINK}/api/register", json = request_body)
+        response = requests.post(f"{BASE_LINK}/api/register", data = request_body)
 
         return response
 
     @staticmethod
     def login(request_body: str) -> str:
 
-        response = requests.post(f"{BASE_LINK}/api/login", json = request_body)
+        response = requests.post(f"{BASE_LINK}/api/login", data = request_body)
 
         return response

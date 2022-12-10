@@ -29,3 +29,13 @@ def get_data_from_dict(data: dict, key_list: list):
         data = data.get(key)
 
     return data
+
+def read_and_return_data(name_func: str, name_file: str) -> dict:
+    """
+    Return correct data for func from file_name
+    name_func: key for dict (for example "get_sigle_user_not_found")
+    name_file: name of your file with data (for example "data.json")
+    """
+    with open(f"{name_file}", 'r') as f:
+        data = json.load(f)
+        return data[name_func][0]
