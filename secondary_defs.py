@@ -24,11 +24,13 @@ def convert_response_to_dict(response: str) -> dict:
         
         return response.json()
 
-def get_data_from_dict(data: dict, key_list: list):
+
+def get_data_from_response(data: dict, key_list: list):
     for key in key_list:
         data = data.get(key)
 
     return data
+
 
 def read_and_return_data(name_func: str, name_file: str) -> dict:
     """
@@ -38,4 +40,4 @@ def read_and_return_data(name_func: str, name_file: str) -> dict:
     """
     with open(f"{name_file}", 'r') as f:
         data = json.load(f)
-        return data[name_func][0]
+        return data.get(name_func)[0]
