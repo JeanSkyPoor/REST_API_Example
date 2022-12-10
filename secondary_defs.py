@@ -1,4 +1,5 @@
 import allure
+import json
 
 def matching_status_code_assert(response: str, correct_code: int) -> None:
         """Matching response status code with correct code. If codes are not equal, raise AssertionError
@@ -22,3 +23,9 @@ def convert_response_to_dict(response: str) -> dict:
         """
         
         return response.json()
+
+def get_data_from_dict(data: dict, key_list: list):
+    for key in key_list:
+        data = data.get(key)
+
+    return data

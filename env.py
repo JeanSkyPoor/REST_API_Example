@@ -1,1 +1,1 @@
-BASE_LINK = 'https://reqres.in/'
+BASE_LINK = 'https://reqres.in'
