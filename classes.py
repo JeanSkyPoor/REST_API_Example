@@ -1,6 +1,6 @@
 import allure
-
-
+import json
+from testing_data import test_data
 
 
 class ResponseData():
@@ -38,10 +38,7 @@ class ResponseData():
         return self
 
 
-
-
-        
-
-
-
+class TestData():
     
+    def return_data(test_name: str):
+        return test_data[test_name]
