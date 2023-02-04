@@ -1,6 +1,6 @@
 import allure
 import json
-from testing_data import test_data
+from testing_data import testing_data
 
 
 class ResponseData():
@@ -38,7 +38,13 @@ class ResponseData():
         return self
 
 
+
 class TestData():
-    
-    def return_data(test_name: str):
-        return test_data[test_name]
+    def __init__(self) -> None:
+        self.test_get_list_users = self.return_data('test_get_list_users')
+        self.test_get_single_user = self.return_data('test_get_single_user')
+        self.test_register = self.return_data("test_register")
+
+    def return_data(self, test_name: str):
+        return testing_data[test_name]
+

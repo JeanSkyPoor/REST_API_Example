@@ -1,7 +1,7 @@
 from schemas import *
 from faker import Faker
 
-test_data = {
+testing_data = {
     "test_get_list_users": [[1, get_list_users_positive, 200],
                             [2, get_list_users_positive, 200],
                             [3, get_list_users_negative, 200],
