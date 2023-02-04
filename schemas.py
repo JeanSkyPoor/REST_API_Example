@@ -1,5 +1,5 @@
 "https://www.mongodb.com/docs/manual/reference/operator/query/jsonSchema/"
-
+"https://json-schema.org/understanding-json-schema/"
 """
 required - обязательные ключи
 properties - ключи уровня
