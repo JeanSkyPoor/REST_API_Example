@@ -29,22 +29,28 @@ class ResponseData():
         if key_list == None:
             return self
 
-        data = self.converted_responce
+        current_data = self.converted_responce
         for key in key_list:
-            data = data.get(key)
-        
-        if correct_data != data:
-            raise AssertionError(f"Data is wrong. Have to be {correct_data}, but have {data}. Keys list is {key_list}") 
-        return self
+            current_data = current_data.get(key)
+
+        with allure.step("Matching correct_data and current_data"):
+            if correct_data != current_data:
+                raise AssertionError(f"Data is wrong. Have to be {correct_data}, but have {current_data}. Keys list is {key_list}") 
+            return self
 
 
 
 class TestData():
-    def __init__(self) -> None:
-        self.test_get_list_users = self.return_data('test_get_list_users')
-        self.test_get_single_user = self.return_data('test_get_single_user')
-        self.test_register = self.return_data("test_register")
 
-    def return_data(self, test_name: str):
-        return testing_data[test_name]
+    @staticmethod
+    def get_list_users():
+        return testing_data["test_get_list_users"]
+
+    @staticmethod
+    def get_single_user():
+        return testing_data["test_get_single_user"]
+
+    @staticmethod
+    def register():
+        return testing_data["test_register"]
 
